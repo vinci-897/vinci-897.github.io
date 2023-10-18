@@ -229,13 +229,13 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: Your name
+        author: vinci
         # Author title
-        author_title: Your title
+        author_title: lol
         # Author's current location
-        location: Your location
+        location: China
         # URL or path to the avatar image
-        avatar: 
+        avatar: https://avatars.githubusercontent.com/u/55838224?v=4
         # Whether show the rounded avatar image
         avatar_rounded: false
         # Email address for the Gravatar
