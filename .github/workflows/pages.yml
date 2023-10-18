@@ -23,6 +23,8 @@ jobs:
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
+      - name: Build theme
+        run: cd themes/tranquilpeak && npm install && npm run prod
       - name: Install Dependencies
         run: npm install
       - name: Build
