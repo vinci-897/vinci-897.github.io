@@ -1,12 +1,12 @@
-title: Hexo
+title: vinci
 subtitle: ''
 description: ''
 keywords: null
-author: John Doe
+author: vinci
 language: en
 timezone: ''
-url: http://example.com
-permalink: ':year/:month/:day/:title/'
+url: https://vinci-897.github.io/
+permalink: ':title-:hash/'
 permalink_defaults: null
 pretty_urls:
   trailing_index: true
