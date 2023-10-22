@@ -41,8 +41,7 @@ vec.push_back({1, 2});
 
 <img width="532" src="https://github.com/vinci-897/vinci-897.github.io/assets/55838224/e470d969-ba62-4238-9909-30b0cbea4126">
 
-在cpp中，由于以下的规则，不支持在函数参数中由一个大括号的参数把一个完全空白的模版参数T推断成完整的initializer_list\<int\>，因此clang会给出类似`template deduction failed`的报错，如果把emplace_back的参数改为initializer_list\<T\>则可行。
-(然而auto是支持这种推导的）
+在cpp中，由于以下的规则，不支持在函数参数中由一个大括号的参数把一个完全空白的模版参数T推断成完整的initializer_list\<int\>，因此clang会给出类似`template deduction failed`的报错(然而auto是支持这种推导的），如果把emplace_back的参数改为initializer_list\<T\>则可行。
 
 <img width="817" src="https://github.com/vinci-897/vinci-897.github.io/assets/55838224/506c7247-d953-4246-83aa-358637a5052c">
 
