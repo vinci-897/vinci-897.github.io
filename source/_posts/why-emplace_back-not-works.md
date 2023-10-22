@@ -6,7 +6,7 @@ title: 为什么不可以emplace_back({1, 2})?
 vector<pair<int, int>> vec;
 vec.push_back({1, 2});
 ```
-然而，`vec.emplace_back({1, 2})`会报错，我们只能`vec.push_back(1, 2)`。
+然而，`vec.emplace_back({1, 2})`会报错，我们只能`vec.emplace_back(1, 2)`。
 
 ## why push_back works?
 
