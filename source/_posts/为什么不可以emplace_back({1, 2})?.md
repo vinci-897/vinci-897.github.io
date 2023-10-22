@@ -12,7 +12,7 @@ vec.push_back({1, 2});
 
 对于`void push_back( T&& value )`，由于下面这两条规则，我们可以使用一个braced-init-list作为函数的参数。
 
- <!--more-->
+<!--more-->
 
 [https://timsong-cpp.github.io/cppwp/n4868/dcl.init.list#1.5](https://timsong-cpp.github.io/cppwp/n4868/dcl.init.list#1.5)
 
