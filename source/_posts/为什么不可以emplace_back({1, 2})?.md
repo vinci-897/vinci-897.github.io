@@ -1,8 +1,6 @@
 ---
 title: 为什么不可以emplace_back({1, 2})?
 ---
-
-# 为什么不可以emplace_back({1, 2})?
 在cpp代码中，我们可以写出如下的代码：
 ```
 vector<pair<int, int>> vec;
@@ -13,6 +11,8 @@ vec.push_back({1, 2});
 ## why push_back works?
 
 对于`void push_back( T&& value )`，由于下面这两条规则，我们可以使用一个braced-init-list作为函数的参数。
+
+ <!--more-->
 
 [https://timsong-cpp.github.io/cppwp/n4868/dcl.init.list#1.5](https://timsong-cpp.github.io/cppwp/n4868/dcl.init.list#1.5)
 
