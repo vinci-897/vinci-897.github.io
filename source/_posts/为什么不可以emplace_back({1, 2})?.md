@@ -10,7 +10,7 @@ vec.push_back({1, 2});
 
 ## why push_back works?
 
-对于`void push_back( T&& value )`，由于下面这两条规则，我们可以使用一个braced-init-list作为函数的参数。
+对于`void push_back( T&& value )`，由于下面这两条规则，我们可以使用一个braced-init-list作为函数的参数（所谓的braced-init-list就是大括号）。
 
 <!--more-->
 
