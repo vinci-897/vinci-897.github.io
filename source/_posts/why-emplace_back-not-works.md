@@ -15,15 +15,15 @@ vec.push_back({1, 2});
 
 <!--more-->
 
-[https://vinci-897.github.io/cppwp/n4868/dcl.init.list#1.5](https://vinci-897.github.io/cppwp/n4868/dcl.init.list#1.5)
+[https://timsong-cpp.github.io/cppwp/n4868/dcl.init.list#1.5](https://timsong-cpp.github.io/cppwp/n4868/dcl.init.list#1.5)
 
-[https://vinci-897.github.io/cppwp/n4868/dcl.init.list#3.7](https://vinci-897.github.io/cppwp/n4868/dcl.init.list#3.7)
+[https://timsong-cpp.github.io/cppwp/n4868/dcl.init.list#3.7](https://timsong-cpp.github.io/cppwp/n4868/dcl.init.list#3.7)
 
 <img width="927" src="https://github.com/vinci-897/vinci-897.github.io/assets/55838224/9205b1f8-1428-4323-b699-ec3ae14a2de7">
 
 由于下面这一条规则，我们最终找到了这一条构造函数
 
-[https://vinci-897.github.io/cppwp/n4868/over.match#list-1.2](https://vinci-897.github.io/cppwp/n4868/over.match#list-1.2)
+[https://timsong-cpp.github.io/cppwp/n4868/over.match#list-1.2](https://timsong-cpp.github.io/cppwp/n4868/over.match#list-1.2)
 <img width="831" src="https://github.com/vinci-897/vinci-897.github.io/assets/55838224/5e8f98a8-5133-4f64-b50f-cc8817e53349">
 
 
