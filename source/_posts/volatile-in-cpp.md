@@ -3,7 +3,7 @@ title: volatile in c/cpp
 date: 2023/10/23 15:59:32
 ---
 ## volatile的行为
-对于c/cpp中的volatile关键字，标准中有如下规定：
+对于c/cpp中的volatile关键字，cpp标准中有如下规定（其实c也是类似的）：
 
 [https://vinci-897.github.io/cppwp/n4868/dcl.type.cv#6](https://vinci-897.github.io/cppwp/n4868/dcl.type.cv#6)
 
