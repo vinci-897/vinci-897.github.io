@@ -61,10 +61,19 @@ int main() {
 
 ps：x64的内存模型相比arm一类来说较为严格，一些类型的缓存不一致是不会发生的，因此如果仅限于x64架构，那么或许可以仅仅使用volatile来控制多线程共享变量，但这不利于代码移植。
 
+## memory order
+memory order是指cpu在实际执行指令时语句的顺序，这种顺序在内存模型不严格的情况下可以与我们书写代码的顺序出现很大不同。
+cpp语言中提供了atomic类，这个类在默认情况下会基于内存屏障实现最严格的内存模型，也就是说对于atomic对象的读取和写入看上去会与我们编写代码的顺序相同，但也可以通过cpp提供的memory_order类来控制。
+
 ## __asm__ __volatile__ ("" : : : "memory")
 
 这是一种编译期内存屏障，与上述的内存屏障指令是不同的，编译器内存屏障不能控制invalid queue和store buffer这种对编译器透明的组件，在编译器眼里cache和memory应该是一体的，一般来说，编译器并不知道自己load或者store的目标到底是cache还是memory。
 __asm__在gcc等编译器中表示内联汇编语言。
 __volatile__的作用和上面描述的一样，主要作用是防止这一句和其他volatile访问的顺序被编译器改变。
+memory的意思是，这一句汇编内联会对memory产生影响，以此告诉编译器，应该考虑到这对局部变量和全局变量的影响，所以不要重排这之前和这之后访存指令的顺序，也就是说这可以保证之前的访存都发生在这之后的访存之前。
+[https://stackoverflow.com/questions/67943540/why-can-asm-volatile-memory-serve-as-a-compiler-barrier](https://stackoverflow.com/questions/67943540/why-can-asm-volatile-memory-serve-as-a-compiler-barrier)
+这个内存屏障主要用于阻止编译器对访存指令的重排，虽然它不能阻止cpu内存模型本身引起的指令重排序，但是在一些拥有strict memory order的架构（比如一些x86cpu）上，这个编译期内存屏障就能够阻止绝大部分的指令重排序（因为在严格的架构上，cpu不允许大多数类型的重排序）。
+
+
 
 
