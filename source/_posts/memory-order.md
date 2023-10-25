@@ -43,7 +43,7 @@ mfence的功能是，在后面的load store全局可见之前，前面的load st
 
 <img width="591" src="https://github.com/vinci-897/vinci-897.github.io/assets/55838224/3e17754f-64a5-48d1-bc7e-be76bdc60334">
 
-有时我们会觉得，load load乱序没有影响，请看上图，按照正常的顺序，r2应该等于NEW，如果C2的L2被放到了L1前面，且C1C2按照L2、S1、S2，L1、B1的顺序执行，那么r2会被赋值为0。
+有时我们会觉得，load load乱序没有影响，请看上图，按照正常的顺序r，2应该等于NEW。然而，如果C2的L2被放到了L1前面，发生load load乱序，且C1C2按照L2、S1、S2，L1、B1的顺序执行，那么r2会被赋值为0，这是不对的。
 
 四种乱序都会对这个程序产生影响，具体内容引自[https://aijishu.com/a/1060000000222715](https://aijishu.com/a/1060000000222715)
 
