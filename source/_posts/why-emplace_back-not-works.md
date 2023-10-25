@@ -1,6 +1,7 @@
 ---
 title: 为什么不可以emplace_back({1, 2})?
 date: 2023/10/22 22:55:26
+disqusId: why-emplace_back-not-works
 ---
 在cpp代码中，我们可以写出如下的代码：
 ```
