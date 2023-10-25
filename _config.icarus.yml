@@ -272,8 +272,7 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
-            # Hexo: https://hexo.io
-            Dromara: https://dromara.org/
+            Hexo: https://hexo.io
     # Categories widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
