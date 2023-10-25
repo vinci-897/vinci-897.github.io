@@ -1,6 +1,7 @@
 ---
 title: volatile in c/cpp
 date: 2023/10/23 15:59:32
+disqusId: volatile-in-c-cpp
 ---
 ## volatile的行为
 对于c/cpp中的volatile关键字，cpp标准中有如下规定（其实c也是类似的）：
