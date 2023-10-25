@@ -49,7 +49,7 @@ mfence的功能是，在后面的load store全局可见之前，前面的load st
 
 有时我们会觉得，load load乱序没有影响，请看上图，按照正常的顺序r，2应该等于NEW。然而，如果C2的L2被放到了L1前面，发生load load乱序，且C1C2按照L2、S1、S2，L1、B1的顺序执行，那么r2会被赋值为0，这是不对的。
 
-四种乱序都会对这个程序产生影响，具体内容引自[https://aijishu.com/a/1060000000222715](https://aijishu.com/a/1060000000222715)
+四种乱序都会对程序产生影响，具体内容引自[https://aijishu.com/a/1060000000222715](https://aijishu.com/a/1060000000222715)
 
 注意，即使如此，mfence也并不等于sfence + lfence，仔细思考一下，会发现sfence + lfence时，无法阻止store load乱序，如果，lfence在sfence前，那么前面的store可以被变换到lfence和sfence之间，后面的load也可以到lfence和sfence之间，所以store仍然有可能跑到load后面；如果sfence在lfence之前，那么是可以阻止store load乱序的，但mfence只有一条指令并且可以阻止任何形式的乱序，因此我们可以发现，sfence + lfence != mfence。
 
