@@ -272,7 +272,7 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
-            Hexo: https://hexo.io
+            # Hexo: https://hexo.io
             Dromara: https://dromara.org/
     # Categories widget configurations
     -
