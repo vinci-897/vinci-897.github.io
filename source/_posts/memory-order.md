@@ -41,6 +41,12 @@ mfence的功能是，在后面的load store全局可见之前，前面的load st
 
 比如说，如果有一条mfence指令，那么不管cpu0的硬件如何安排指令顺序，其他cpu都可以安全地认为，cpu0是先进行了前面的load store再进行了后面的load store。
 
+<img width="591" src="https://github.com/vinci-897/vinci-897.github.io/assets/55838224/3e17754f-64a5-48d1-bc7e-be76bdc60334">
+
+有时我们会觉得，load load乱序没有影响，请看上图，按照正常的顺序，r2应该等于NEW，如果C2的L2被放到了L1前面，且C1C2按照L2、S1、S2，L1、B1的顺序执行，那么r2会被赋值为0。
+
+四种乱序都会对这个程序产生影响，具体内容引自[https://aijishu.com/a/1060000000222715](https://aijishu.com/a/1060000000222715)
+
 注意，即使如此，mfence也并不等于sfence + lfence，仔细思考一下，会发现sfence + lfence时，无法阻止store load乱序，如果，lfence在sfence前，那么前面的store可以被变换到lfence和sfence之间，后面的load也可以到lfence和sfence之间，所以store仍然有可能跑到load后面；如果sfence在lfence之前，那么是可以阻止store load乱序的，但mfence只有一条指令并且可以阻止任何形式的乱序，因此我们可以发现，sfence + lfence != mfence。
 
 **我们所说的乱序/顺序改变都是指多核场景下在cpu1看来，cpu0的访存指令执行顺序与代码顺序不同**，既然这样，我们之前说到x86根本不会出现除store load的乱序，那么也就是说，在多线程缓存/内存一致性这个问题上，lfence和sfence根本没有意义，他们两个所能阻止的乱序在x86上压根就不会发生。（x86在目前被认为是使用了tso内存模型，这种模型比较严格）
