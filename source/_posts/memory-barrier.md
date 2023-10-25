@@ -9,7 +9,7 @@ disqusId: memory-barrier
 
 <!--more-->
 
-有些时候我们会思考，存在分支情况下是否会重排，比如`if (a == 1) b = 2;`里，store b是否会被排序到load a前面？由于分支预测功能和流水线的存在，答案是会的，但如果后续发现a!=1，if分支最终没有进入，那么这次store b是无效的，cpu会采用另一分支或直接导致流水线暂停。
+有些时候我们会思考，存在分支情况下是否会重排，比如if (a == 1) b = 2;里，store b是否会被排序到load a前面？由于分支预测功能的存在，我认为答案是可能会的，但如果后续发现a!=1，if分支最终没有进入，那么这次store b是无效的，cpu会采用另一分支。
 ## 内存屏障指令
 在x86架构中，Load、Load， Load、Store， Store、Store这三种是不允许发生重排的（我们说的重排不一定是真正的重排，而是在其他核心看来访存行为的顺序变化），只有Store、Load这种被允许重排成Load、Store（即Stores after loads）。x86只允许store load指令的顺序交换，但这仅限于交换不同变量的store和load，因为对于同一变量的store load序列，这种交换显然是错误的，cpu很明白不能交换同一个变量的store load指令序列。
 
