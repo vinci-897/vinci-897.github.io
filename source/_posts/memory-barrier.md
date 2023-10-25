@@ -1,7 +1,7 @@
 ---
-title: memory order
+title: memory barrier
 date: 2023/10/25 15:58:32
-disqusId: memory-order
+disqusId: memory-barrier
 ---
 根据上一篇文章[https://vinci-897.github.io/volatile-in-cpp/](https://vinci-897.github.io/volatile-in-cpp/)中memory order部分提到的内容，我们知道，不同的cpu有不同的memory model和memory order，这导致cpu会对代码进行重排序，虽然单线程上编译器和cpu对代码的重排序都不会导致最终结果的不同，但当代码在一个cpu核心上执行时，由于多核缓存不同步等问题，其他的cpu核心会看到与原有代码顺序不同的访存顺序，这就是我们所说的乱序执行，这会引起一些问题。
 
