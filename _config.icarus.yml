@@ -272,8 +272,10 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
-            Hexo: https://hexo.io
-            xuan: https://xuan-insr.github.io
+            Xuan: https://xuan-insr.github.io
+            Zicx: https://zicx.top/notebook
+            Isshikih: https://note.isshikih.top
+            Freshboy: https://freshboy-cyh.github.io
     # Categories widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
